@@ -1,3 +1,4 @@
 # AngularIsBeautiful
 
-## Conflict __Test__ master
+
+## Conflict __Test__ Origin
