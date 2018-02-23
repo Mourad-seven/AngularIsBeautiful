@@ -1,0 +1,24 @@
+{
+  "name": "superhero-app",
+  "version": "1.0.0",
+  "description": "App managing SuperHero",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mourad-seven/AngularIsBeautiful.git"
+  },
+  "keywords": [
+    "superhero",
+    "hero",
+    "manager"
+  ],
+  "author": "Mourad-seven",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mourad-seven/AngularIsBeautiful/issues"
+  },
+  "homepage": "https://github.com/Mourad-seven/AngularIsBeautiful#readme"
+}
