@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger,style,transition,animate,keyframes,query,stagger } from "@angular/animations";
+import { DataService } from "../data.service";
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from "@angul
   styleUrls: ['./home.component.scss'],
   animations: [
 
-    trigger('Heros', [
+    trigger('Heroes', [
       transition('* => *', [
         query(':enter', style({ opacity: 0 }), {optional: true}),
 
@@ -36,20 +37,27 @@ export class HomeComponent implements OnInit {
   BtnTxt: string = "Add Hero!";
   itemCount: number;
   newHero: string = "Green Lantern";
-  Heros = ["Deadpool","Wolverine","Moi"];
+  Heroes = [];
 
-  constructor() { }
+  constructor(private _data: DataService) { }
+
   ngOnInit() {
-    this.itemCount = this.Heros.length;
+    this._data.hero.subscribe(res => this.Heroes = res);
+    this.itemCount = this.Heroes.length;
+    this._data.changeHero(this.Heroes)
   }
   addHero() {
-    this.Heros.push(this.newHero);
+    this.Heroes.push(this.newHero);
     this.newHero = '';
-    this.itemCount = this.Heros.length;
+    this.itemCount = this.Heroes.length;
+    this._data.changeHero(this.Heroes)
+    
   }
 
   removeHero(i) {
-    this.Heros.splice(i, 1);
+    this.Heroes.splice(i, 1);
+    this._data.changeHero(this.Heroes)
+    
   }
 
 }
