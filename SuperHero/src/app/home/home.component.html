@@ -16,7 +16,7 @@
     </form>
   </div>
   <div class="col">
-    <p class="hero-container" *ngFor="let hero of Heros">
+    <p class="hero-container" *ngFor="let hero of Heros; let i = index" (click)="removeHero(i)">
       {{ hero }}
     </p>
   </div>
